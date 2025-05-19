@@ -1,0 +1,19 @@
+**Cartão de Resumo: Como Funcionam os Modelos de Linguagem?**
+
+* **Histórico:** Avanços em Processamento de Linguagem Natural (PLN) levaram ao desenvolvimento de Grandes Modelos de Linguagem (LLMs), transformando a interação com aplicativos e sistemas.
+* **Desenvolvimentos Chave:**
+    * **Tokenização:** Converter texto em unidades significativas (tokens), geralmente palavras, e representá-los numericamente para que os computadores possam "ler". Um processo estatístico comum envolve dividir o texto por espaços, remover palavras comuns ("the", "a" - stopwords) e atribuir um número a cada token único.
+    * **Inserções de Palavras (Word Embeddings):** Representações vetoriais de palavras criadas durante o treinamento de modelos de aprendizado profundo. Capturam as relações semânticas entre palavras através da análise de padrões de coocorrência em frases. Palavras semanticamente similares têm vetores com orientações semelhantes no espaço vetorial. A similaridade cosseno é usada para medir essa semelhança.
+    * **Desenvolvimentos Arquitetônicos:** Mudanças no design dos modelos para capturar o contexto das palavras. As Redes Neurais Recorrentes (RNNs) foram uma das primeiras arquiteturas a processar sequências de palavras, mantendo um "estado oculto" como uma forma de memória do contexto anterior. No entanto, RNNs tinham dificuldades em reter informações relevantes de longo alcance em sequências longas, pois o "sinal" da informação importante podia se diluir ou ser perdido. A tarefa de "mascaramento" ([MASK]) era usada para treinar modelos a prever palavras faltantes com base no contexto.
+
+**Exemplo Lúdico: A Biblioteca de Palavras Vivas**
+
+Imagine que as palavras são como pessoas em uma vasta biblioteca. Para um computador entender essa biblioteca, precisamos de algumas ferramentas:
+
+* **Tokenização (O Catálogo Inicial):** Primeiro, cada livro (texto) é dividido em capítulos, parágrafos e, finalmente, em palavras individuais (tokens), que recebem um número de identificação para serem catalogados. Palavras muito comuns e sem muito significado sozinhas (como "o", "e") são como ruídos e podem ser removidas para focar no essencial.
+
+* **Inserções de Palavras (Os Mapas de Relacionamento):** Durante a leitura de muitos livros, o computador aprende como as palavras costumam aparecer juntas e em contextos similares. Ele cria "mapas de relacionamento" (vetores) para cada palavra. Palavras que são usadas de forma parecida (como "cão" e "cachorrinho") ficam próximas nesses mapas, indicando que têm significados relacionados. Palavras sem relação ("cão" e "skate") ficam distantes.
+
+* **Desenvolvimentos Arquitetônicos (Os Bibliotecários com Memória):** Inicialmente, os "bibliotecários" (modelos como RNNs) liam os livros palavra por palavra, tentando lembrar o contexto do que tinham lido antes para entender a palavra atual. Era como tentar entender uma frase longa lembrando de cada palavra anterior. Se a informação importante estivesse no início da frase e a palavra a ser entendida no final, a memória do bibliotecário poderia ficar "cheia" de informações menos importantes, dificultando a compreensão do contexto crucial. A tarefa de "palavra mascarada" era como um jogo onde o bibliotecário tinha que adivinhar uma palavra que estava faltando em uma frase, usando o contexto das outras palavras como pistas.
+
+Os modelos de linguagem funcionam aprendendo a "ler" (tokenização), a entender os "relacionamentos" entre as palavras (inserções) e a "lembrar" do contexto (arquiteturas como RNNs, embora com limitações que levaram a arquiteturas mais avançadas como os Transformers).
